@@ -1,0 +1,7 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make: Entering directory 'd:/DRVR/food-api'
+echo "Building back end..."
+go build -o foodapi ./cmd/api/
+echo "Binary built!"
+make: Leaving directory 'd:/DRVR/food-api'
+ 
