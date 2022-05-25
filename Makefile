@@ -27,7 +27,7 @@ start: run
 ## stop: stops the running application
 stop:
 	@echo "Stopping back end..."
-	@-pkill -SIGTERM -f "./${BINARY_NAME}"
+	@taskkill /IM ${BINARY_NAME} /F
 	@echo "Stopped back end!"
 
 ## restart: stops and starts the running application

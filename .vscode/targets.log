@@ -8,10 +8,12 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon May 23 18:07:09 2022
+# Make data base, printed on Wed May 25 09:00:44 2022
 
 # Variables
 
+# environment
+FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
 SYSTEMDRIVE = C:
 # environment
@@ -21,11 +23,12 @@ USERPROFILE = C:\Users\cloud
 # environment
 LOCALAPPDATA = C:\Users\cloud\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-0ba210f4-b14f-4122-bdef-17a9e4c8bb0c-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-6ef6a9de-5068-42ff-ae72-c5570f7d81e6-sock
 # environment
 VSCODE_CWD = C:\Users\cloud\AppData\Local\Programs\Microsoft VS Code
 # environment
-CHOCOLATEYINSTALL = C:\ProgramData\chocolatey
+CHOCOLATEYINSTALL = C: 
+\ProgramData\chocolatey
 # environment
 SYSTEMROOT = C:\WINDOWS
 # environment
@@ -39,7 +42,9 @@ GOPATH = C:\Users\cloud\go
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_12412_KKSBLFQVCMQFWJKS
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_22516_EDECLDGGWVQRYBLM
+# environment
+FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -93,7 +98,7 @@ MAKEFILE_LIST := Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 12412
+VSCODE_PID = 22516
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # automatic
@@ -211,11 +216,12 @@ SESSIONNAME = Console
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync load
 # environment
-PROCESSOR_REVISION = 9e0a
+PROCESSOR_REVI 
+SION = 9e0a
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
 # variable set hash-table stats:
-# Load=101/1024=10%, Rehash=0, Collisions=9/128=7%
+# Load=103/1024=10%, Rehash=0, Collisions=10/130=8%
 
 # Pattern-specific Variable Values
 
@@ -223,9 +229,9 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
 
 # Directories
 
-# . (key d:/DRVR/food-api, mtime 1653280658): 13 files, no impossibilities.
+# . (key d:/DRVR/food-api, mtime 1653369751): 12 files, no impossibilities.
 
-# 13 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -241,7 +247,7 @@ start: run
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-23 11:01:05
+#  Last modified 2022-05-23 20:38:43
 #  File has been updated.
 #  Successfully updated.
 
@@ -261,7 +267,7 @@ stop:
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 29):
 	@echo "Stopping back end..."
-	@-pkill -SIGTERM -f "./${BINARY_NAME}"
+	@taskkill /IM ${BINARY_NAME} /F
 	@echo "Stopped back end!"
 
 # Not a target:
@@ -296,12 +302,12 @@ build:
 	@echo "Binary built!"
 
 restart: stop start
-#  Implicit rule search has not been done.
+# 
+  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-# file 
-s hash-table stats:
+# files hash-table stats:
 # Load=10/1024=1%, Rehash=0, Collisions=1/24=4%
 # VPATH Search Paths
 
@@ -309,12 +315,12 @@ s hash-table stats:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 22 / storage = 167 B / avg = 7 B
-# current buf: size = 8174 B / used = 167 B / count = 22 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 21 / storage = 150 B / avg = 7 B
+# current buf: size = 8174 B / used = 150 B / count = 21 / avg = 7 B
 
-# strcache performance: lookups = 36 / hit rate = 38%
+# strcache performance: lookups = 35 / hit rate = 40%
 # hash-table stats:
-# Load=22/8192=0%, Rehash=0, Collisions=0/36=0%
-# Finished Make data base on Mon May 23 18:07:09 2022
+# Load=21/8192=0%, Rehash=0, Collisions=0/35=0%
+# Finished Make data base on Wed May 25 09:00:44 2022
 
  

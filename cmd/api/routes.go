@@ -23,6 +23,9 @@ func (app *application) routes() http.Handler {
 	mux.Post("/users/login", app.Login)
 	mux.Post("/users/logout", app.Logout)
 
+	mux.Get("/foods", app.AllFoods)
+	mux.Get("/books/{slug}", app.OneFood)
+
 	mux.Post("/validate-token", app.ValidateToken)
 
 	mux.Route("/admin", func(mux chi.Router) {
@@ -34,6 +37,12 @@ func (app *application) routes() http.Handler {
 		mux.Get("/users/get/{id}", app.GetUser)
 		mux.Post("/users/delete", app.DeleteUser)
 		mux.Post("/log-user-out/{id}", app.LogUserOutAndSetInactive)
+
+		// admin food routes
+		mux.Post("/countries/all", app.CountriesAll)
+		mux.Post("/foods/save", app.EditFood)
+		mux.Post("/foods/delete", app.DeleteFood)
+		mux.Post("/foods/{id}", app.FoodByID)
 
 	})
 

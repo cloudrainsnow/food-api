@@ -24,9 +24,10 @@ func New(dbPool *sql.DB) Models {
 	db = dbPool
 
 	return Models{
-		User:  User{},
-		Token: Token{},
-		Food:  Food{},
+		User:    User{},
+		Token:   Token{},
+		Food:    Food{},
+		Country: Country{},
 	}
 }
 
@@ -34,9 +35,10 @@ func New(dbPool *sql.DB) Models {
 // in this type is available to us throughout the application, anywhere that the
 // app variable is used, provided that the model is also added in the New function.
 type Models struct {
-	User  User
-	Token Token
-	Food  Food
+	User    User
+	Token   Token
+	Food    Food
+	Country Country
 }
 
 // User is the stucture which holds one user from the database. Note

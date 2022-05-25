@@ -1,14 +1,20 @@
 package main
 
 import (
+	"encoding/base64"
 	"errors"
+	"fmt"
 	"net/http"
+	"os"
 	"strconv"
 	"time"
 
 	"github.com/food/internal/data"
 	"github.com/go-chi/chi/v5"
+	"github.com/mozillazg/go-slugify"
 )
+
+var staticPath = "./static/"
 
 // jsonResponse is the type used for generic JSON responses
 type jsonResponse struct {
@@ -283,4 +289,187 @@ func (app *application) ValidateToken(w http.ResponseWriter, r *http.Request) {
 	}
 
 	_ = app.writeJSON(w, http.StatusOK, payload)
+}
+
+// AllFoods returns all foods as JSON
+func (app *application) AllFoods(w http.ResponseWriter, r *http.Request) {
+	foods, err := app.models.Food.GetAll()
+	if err != nil {
+		app.errorJSON(w, err)
+		return
+	}
+
+	payload := jsonResponse{
+		Error:   false,
+		Message: "success",
+		Data:    envelope{"foods": foods},
+	}
+
+	app.writeJSON(w, http.StatusOK, payload)
+}
+
+// OneFood returns one food as JSON, by slug
+func (app *application) OneFood(w http.ResponseWriter, r *http.Request) {
+	slug := chi.URLParam(r, "slug")
+
+	food, err := app.models.Food.GetOneBySlug(slug)
+	if err != nil {
+		app.errorJSON(w, err)
+		return
+	}
+
+	payload := jsonResponse{
+		Error: false,
+		Data:  food,
+	}
+
+	app.writeJSON(w, http.StatusOK, payload)
+}
+
+// CountriesAll returns a list of all countries consisting of country id and country name, as JSON
+func (app *application) CountriesAll(w http.ResponseWriter, r *http.Request) {
+	all, err := app.models.Country.All()
+	if err != nil {
+		app.errorJSON(w, err)
+		return
+	}
+
+	type selectData struct {
+		Value int    `json:"value"`
+		Text  string `json:"text"`
+	}
+
+	var results []selectData
+
+	for _, x := range all {
+		country := selectData{
+			Value: x.ID,
+			Text:  x.CountryName,
+		}
+
+		results = append(results, country)
+	}
+
+	payload := jsonResponse{
+		Error: false,
+		Data:  results,
+	}
+
+	app.writeJSON(w, http.StatusOK, payload)
+}
+
+// EditFood accepts Food as JSON and makes DB calls to either insert or update Food
+func (app *application) EditFood(w http.ResponseWriter, r *http.Request) {
+	var requestPayload struct {
+		ID           int    `json:"id"`
+		KnownAs      string `json:"known_as"`
+		CountryID    int    `json:"country_id"`
+		MakeYear     int    `json:"make_year"`
+		Description  string `json:"description"`
+		SampleBase64 string `json:"sample"`
+		TasteIDs     []int  `json:"taste_ids"`
+	}
+
+	err := app.readJSON(w, r, &requestPayload)
+	if err != nil {
+		app.errorJSON(w, err)
+		return
+	}
+
+	food := data.Food{
+		ID:          requestPayload.ID,
+		KnownAs:     requestPayload.KnownAs,
+		CountryID:   requestPayload.CountryID,
+		MakeYear:    requestPayload.MakeYear,
+		Description: requestPayload.Description,
+		Slug:        slugify.Slugify(requestPayload.KnownAs),
+		TasteIDs:    requestPayload.TasteIDs,
+	}
+
+	if len(requestPayload.SampleBase64) > 0 {
+		// we have a sample
+		decoded, err := base64.StdEncoding.DecodeString(requestPayload.SampleBase64)
+		if err != nil {
+			app.errorJSON(w, err)
+			return
+		}
+
+		// write image to /static/samples
+		if err := os.WriteFile(fmt.Sprintf("%s/samples/%s.jpg", staticPath, food.Slug), decoded, 0666); err != nil {
+			app.errorJSON(w, err)
+			return
+		}
+	}
+
+	if food.ID == 0 {
+		// adding a food
+		_, err := app.models.Food.Insert(food)
+		if err != nil {
+			app.errorJSON(w, err)
+			return
+		}
+	} else {
+		// updating a food
+		err := food.Update()
+		if err != nil {
+			app.errorJSON(w, err)
+			return
+		}
+	}
+
+	payload := jsonResponse{
+		Error:   false,
+		Message: "Changes saved",
+	}
+
+	app.writeJSON(w, http.StatusAccepted, payload)
+}
+
+// FoodByID returns one food as JSON, by ID
+func (app *application) FoodByID(w http.ResponseWriter, r *http.Request) {
+	foodID, err := strconv.Atoi(chi.URLParam(r, "id"))
+	if err != nil {
+		app.errorJSON(w, err)
+		return
+	}
+
+	food, err := app.models.Food.GetOneById(foodID)
+	if err != nil {
+		app.errorJSON(w, err)
+		return
+	}
+
+	payload := jsonResponse{
+		Error: false,
+		Data:  food,
+	}
+
+	app.writeJSON(w, http.StatusOK, payload)
+}
+
+// DeleteFood accepts an ID and calls DB to delete one Food
+func (app *application) DeleteFood(w http.ResponseWriter, r *http.Request) {
+	var requestPayload struct {
+		ID int `json:"id"`
+	}
+
+	err := app.readJSON(w, r, &requestPayload)
+	if err != nil {
+		app.errorJSON(w, err)
+		return
+	}
+
+	err = app.models.Food.DeleteByID(requestPayload.ID)
+	if err != nil {
+		app.errorJSON(w, err)
+		return
+	}
+
+	payload := jsonResponse{
+		Error:   false,
+		Message: "Food deleted",
+	}
+
+	app.writeJSON(w, http.StatusOK, payload)
+
 }
