@@ -39,10 +39,10 @@ func (app *application) routes() http.Handler {
 		mux.Post("/log-user-out/{id}", app.LogUserOutAndSetInactive)
 
 		// admin food routes
-		mux.Post("/countries/all", app.CountriesAll)
+		mux.Get("/countries/all", app.CountriesAll)
 		mux.Post("/foods/save", app.EditFood)
 		mux.Post("/foods/delete", app.DeleteFood)
-		mux.Post("/foods/{id}", app.FoodByID)
+		mux.Get("/foods/{id}", app.FoodByID)
 
 	})
 
