@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri May 27 06:50:02 2022
+# Make data base, printed on Fri May 27 11:38:16 2022
 
 # Variables
 
@@ -21,7 +21,7 @@ USERPROFILE = C:\Users\cloud
 # environment
 LOCALAPPDATA = C:\Users\cloud\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-04f8c86d-7e6e-4cd0-9551-6259ab83e5c7-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-7185127b-c36f-4a79-9b21-fddbce835fd9-sock
 # environment
 VSCODE_CWD = C:\Users\cloud\AppData\Local\Programs\Microsoft VS Code
 # environment
@@ -39,7 +39,7 @@ GOPATH = C:\Users\cloud\go
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_11676_NUZTSOTLENGBVNKJ
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_24496_SWOSHAXEBQAFJBLG
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -62,8 +62,7 @@ LANG = C
 TMP = C:\Users\cloud\AppData\Local\Temp
 # default
 .INCLUDE_DIRS = .
-# 
- environment
+# environment
 PROCESSOR_ARCHITEW6432 = AMD64
 # makefile
 MAKEFLAGS = pqrR
@@ -94,7 +93,7 @@ MAKEFILE_LIST := Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 11676
+VSCODE_PID = 24496
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # automatic
@@ -147,6 +146,8 @@ VSCODE_LOG_NATIVE = false
 USERNAME = cloud
 # environment
 COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
+# environment
+DOCKER_HOST = tcp://127.0.0.1:2375
 # automatic
 ?F = $(notdir $?)
 # environment
@@ -184,8 +185,6 @@ HOMEDRIVE = C:
 # environment
 PROCESSOR_ARCHITECTURE = x86
 # environment
-GOMODCACHE = C:\Users\cloud\go\pkg\mod
-# environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
@@ -197,8 +196,6 @@ ELECTRON_RUN_AS_NODE = 1
 TEMP = C:\Users\cloud\AppData\Local\Temp
 # environment
 VSCODE_IPC_HOOK = \\.\pipe\d0147111316d36371aa16fb4aa8fa771-1.67.2-main-sock
-# environment
-GOPROXY = https://proxy.golang.org,direct
 # default
 .RECIPEPREFIX := 
 # automatic
@@ -214,10 +211,9 @@ SESSIONNAME = Console
 # environment
 PROCESSOR_REVISION = 9e0a
 # environment
-PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 10 
-, GenuineIntel
+PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
 # variable set hash-table stats:
-# Load=101/1024=10%, Rehash=0, Collisions=9/128=7%
+# Load=100/1024=10%, Rehash=0, Collisions=10/127=8%
 
 # Pattern-specific Variable Values
 
@@ -225,7 +221,7 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 10
 
 # Directories
 
-# . (key d:/DRVR/food-api, mtime 1653452963): 13 files, no impossibilities.
+# . (key d:/DRVR/food-api, mtime 1653615481): 13 files, no impossibilities.
 
 # 13 files, no impossibilities in 1 directories.
 
@@ -284,7 +280,8 @@ run: build
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 13):
-	@echo "Starting back end..."
+	@echo "Starting b 
+ack end..."
 	@env DSN=${DSN} ENV=${ENV} ./${BINARY_NAME} &
 	@echo "Back end started!"
 
@@ -300,8 +297,7 @@ build:
 restart: stop start
 #  Implicit rule search has not been done.
 #  Modification time never checked.
-#  File ha 
-s not been updated.
+#  File has not been updated.
 
 # files hash-table stats:
 # Load=10/1024=1%, Rehash=0, Collisions=1/24=4%
@@ -317,6 +313,6 @@ s not been updated.
 # strcache performance: lookups = 36 / hit rate = 38%
 # hash-table stats:
 # Load=22/8192=0%, Rehash=0, Collisions=0/36=0%
-# Finished Make data base on Fri May 27 06:50:02 2022
+# Finished Make data base on Fri May 27 11:38:16 2022
 
  
