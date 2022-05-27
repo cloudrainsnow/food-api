@@ -8,12 +8,10 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed May 25 09:00:44 2022
+# Make data base, printed on Fri May 27 06:50:02 2022
 
 # Variables
 
-# environment
-FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
 SYSTEMDRIVE = C:
 # environment
@@ -23,12 +21,11 @@ USERPROFILE = C:\Users\cloud
 # environment
 LOCALAPPDATA = C:\Users\cloud\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-6ef6a9de-5068-42ff-ae72-c5570f7d81e6-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-04f8c86d-7e6e-4cd0-9551-6259ab83e5c7-sock
 # environment
 VSCODE_CWD = C:\Users\cloud\AppData\Local\Programs\Microsoft VS Code
 # environment
-CHOCOLATEYINSTALL = C: 
-\ProgramData\chocolatey
+CHOCOLATEYINSTALL = C:\ProgramData\chocolatey
 # environment
 SYSTEMROOT = C:\WINDOWS
 # environment
@@ -42,9 +39,7 @@ GOPATH = C:\Users\cloud\go
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_22516_EDECLDGGWVQRYBLM
-# environment
-FPS_BROWSER_USER_PROFILE_STRING = Default
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_11676_NUZTSOTLENGBVNKJ
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -67,7 +62,8 @@ LANG = C
 TMP = C:\Users\cloud\AppData\Local\Temp
 # default
 .INCLUDE_DIRS = .
-# environment
+# 
+ environment
 PROCESSOR_ARCHITEW6432 = AMD64
 # makefile
 MAKEFLAGS = pqrR
@@ -98,7 +94,7 @@ MAKEFILE_LIST := Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 22516
+VSCODE_PID = 11676
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # automatic
@@ -132,7 +128,7 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Calibre2\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\PuTTY\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Go\bin;C:\ProgramData\chocolatey\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\cloud\scoop\shims;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\cloud\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\cloud\AppData\Local\Programs\Python\Python39\;C:\Users\cloud\AppData\Local\Microsoft\WindowsApps;D:\flutter\bin;C:\Users\cloud\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\cloud\.dotnet\tools;C:\Users\cloud\AppData\Local\atom\bin;C:\Users\cloud\AppData\Roaming\npm;C:\Users\cloud\Downloads\mongodb-shell-windows-x86_64-4.4.6\mongodb-win32-x86_64-windows-4.4.6\bin;C:\Users\cloud\.dotnet\tools;C:\Program Files\MongoDB\Server\4.4\bin;C:\Program Files\Azure Data Studio\bin;C:\Users\cloud\AppData\Local\GitHubDesktop\bin;C:\Users\cloud\Downloads\apache-maven-3.8.3\bin;;C:\Users\cloud\AppData\Local\Microsoft\WindowsApps;C:\Users\cloud\go\bin
+PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Calibre2\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\PuTTY\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Go\bin;C:\ProgramData\chocolatey\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Amazon\AWSCLIV2\;C:\Users\cloud\scoop\shims;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\cloud\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\cloud\AppData\Local\Programs\Python\Python39\;C:\Users\cloud\AppData\Local\Microsoft\WindowsApps;D:\flutter\bin;C:\Users\cloud\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\cloud\.dotnet\tools;C:\Users\cloud\AppData\Local\atom\bin;C:\Users\cloud\AppData\Roaming\npm;C:\Users\cloud\Downloads\mongodb-shell-windows-x86_64-4.4.6\mongodb-win32-x86_64-windows-4.4.6\bin;C:\Users\cloud\.dotnet\tools;C:\Program Files\MongoDB\Server\4.4\bin;C:\Program Files\Azure Data Studio\bin;C:\Users\cloud\AppData\Local\GitHubDesktop\bin;C:\Users\cloud\Downloads\apache-maven-3.8.3\bin;;C:\Users\cloud\AppData\Local\Microsoft\WindowsApps;C:\Users\cloud\go\bin
 # environment
 COMPUTERNAME = ARCHANGEL
 # default
@@ -216,12 +212,12 @@ SESSIONNAME = Console
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync load
 # environment
-PROCESSOR_REVI 
-SION = 9e0a
+PROCESSOR_REVISION = 9e0a
 # environment
-PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
+PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 10 
+, GenuineIntel
 # variable set hash-table stats:
-# Load=103/1024=10%, Rehash=0, Collisions=10/130=8%
+# Load=101/1024=10%, Rehash=0, Collisions=9/128=7%
 
 # Pattern-specific Variable Values
 
@@ -229,9 +225,9 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
 
 # Directories
 
-# . (key d:/DRVR/food-api, mtime 1653369751): 12 files, no impossibilities.
+# . (key d:/DRVR/food-api, mtime 1653452963): 13 files, no impossibilities.
 
-# 12 files, no impossibilities in 1 directories.
+# 13 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -302,10 +298,10 @@ build:
 	@echo "Binary built!"
 
 restart: stop start
-# 
-  Implicit rule search has not been done.
+#  Implicit rule search has not been done.
 #  Modification time never checked.
-#  File has not been updated.
+#  File ha 
+s not been updated.
 
 # files hash-table stats:
 # Load=10/1024=1%, Rehash=0, Collisions=1/24=4%
@@ -315,12 +311,12 @@ restart: stop start
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 21 / storage = 150 B / avg = 7 B
-# current buf: size = 8174 B / used = 150 B / count = 21 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 22 / storage = 160 B / avg = 7 B
+# current buf: size = 8174 B / used = 160 B / count = 22 / avg = 7 B
 
-# strcache performance: lookups = 35 / hit rate = 40%
+# strcache performance: lookups = 36 / hit rate = 38%
 # hash-table stats:
-# Load=21/8192=0%, Rehash=0, Collisions=0/35=0%
-# Finished Make data base on Wed May 25 09:00:44 2022
+# Load=22/8192=0%, Rehash=0, Collisions=0/36=0%
+# Finished Make data base on Fri May 27 06:50:02 2022
 
  
